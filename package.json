@@ -2,7 +2,12 @@
   "name": "user-form",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm":"6.10.2",
+    "node": "12.8.0"
+  },
   "dependencies": {
+    "antd": "^3.24.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"

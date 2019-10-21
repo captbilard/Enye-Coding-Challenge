@@ -1,6 +1,17 @@
+@import '~antd/dist/antd.css';
+
+
 .App {
   text-align: center;
 }
+
+.Container {
+  width: 75%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .App-logo {
   height: 40vmin;
