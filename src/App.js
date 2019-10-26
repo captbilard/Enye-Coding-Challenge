@@ -1,66 +1,18 @@
 import React from 'react';
-import {Table} from 'antd'
 import logo, { ReactComponent } from './logo.svg';
 import './App.css';
-import Form from './Form'
+import Form from './components/Form'
+import UsersTable from './components/Tables';
 
+//Get all the various components from their various components folder and then render them here
 
-const columns = [{
-  title:'First Name',
-  dataIndex: 'firstName',
-  key: 'firstName',
-},
-{
-  title: 'Last Name',
-  dataIndex: 'lastName',
-  key:'lastName'
-},
-{
-  title:'Birthday',
-  dataIndex:'birthday',
-  key: 'birthday'
-},
-{
-  title:'Age',
-  dataIndex: 'age',
-  key: 'age'
-},
-{
-  title:'Hobby',
-  dataIndex: 'hobby',
-  key:'hobby'
-}
-]
-
-
-
-
-
-class App extends React.Component{
-  state = {
-    users:[]
-  }
-
-  handleSubmit = user => {
-    this.setState({users: [...this.state.users, user]})
-  }
-  
-
-  render(){
-    const {users} = this.state;
-    return(
-      <div className="Container">
-        <h1>Coding Challenge 1</h1>
-        <Form handleSubmit={this.handleSubmit} />
-        <Table columns={columns} dataSource={users}/>
-      </div>
-    )
-  }
-
-}
-
-
-
+const App = () => (
+  <div className="Container">
+    <h1> Coding Challenge 2</h1>
+    <Form />
+    <UsersTable />
+  </div>
+)
 
 
 

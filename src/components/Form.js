@@ -1,6 +1,11 @@
-import React, { Component } from 'react'
-import {Input, InputNumber, DatePicker, Button} from 'antd'
+import React, { Component } from 'react';
+import {Input, InputNumber, DatePicker, Button} from 'antd';
+import {connect} from 'react-redux';
+import {addUser} from '../actions';
 const {TextArea} = Input;
+
+
+
 
 class Form extends React.Component{
     constructor(props){
@@ -38,13 +43,18 @@ class Form extends React.Component{
             age: value
         })
     }
-    submitForm = () => {
-        this.props.handleSubmit(this.state)
+    submitForm = (event) => {
+        event.preventDefault()
+        //calls the action creator to make redux become aware of the changes in the state of the app
+        this.props.addUser(this.state)
+        
+        // this.props.handleSubmit(this.state)
         this.setState(this.initialState)
     }
     render(){
-
+        // const {users} = this.state;
         return(
+            
             <div className="FormContainer">
                 <form>
                     <label >First Name: </label>
@@ -64,4 +74,10 @@ class Form extends React.Component{
     }
 }
 
-export default Form;
+
+//connect the form above to the redux store
+export default connect(
+    null, 
+    {addUser}
+)(Form)
+
